@@ -1,0 +1,26 @@
+@use './variables';
+
+@mixin text-md-regular {
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.5rem;
+}
+
+@mixin text-md-semi-bold {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+}
+
+@mixin text-sm-semi-bold {
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+}
+
+@mixin error-msg {
+  display: flex;
+  align-items: center;
+  @include text-sm-semi-bold;
+  color: variables.$color-red-medium;
+}

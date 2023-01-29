@@ -1,0 +1,90 @@
+@use './base/reset';
+@use './utils/fonts';
+@use './utils/variables';
+@use './utils/mixins';
+
+html {
+  height: 100vh;
+}
+
+body {
+  max-height: 100%;
+  height: 100%;
+  font-family: 'Nunito', sans-serif;
+  color: variables.$color-blue-hard;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.page {
+  background-color: variables.$color-grey-background;
+  padding: 1rem 2rem;
+}
+
+.input {
+  padding: 0.5rem 0.75rem;
+  border: 0.0625rem solid variables.$color-grey-lighter;
+  border-radius: 0.25rem;
+  background-color: variables.$color-white-light;
+  @include mixins.text-md-regular;
+  outline: none;
+
+  &_invalid {
+    border-color: variables.$color-red-medium;
+  }
+
+  &:hover {
+    box-shadow: 0 0.25rem 1.3125rem rgba(variables.$color-blue-harder, 0.11);
+  }
+
+  &:focus {
+    border: 0.0625rem solid variables.$color-black-hard;
+  }
+}
+
+.input-wrapper,
+.select-wrapper {
+  display: grid;
+  row-gap: 0.3rem;
+
+  &__error-message {
+    @include mixins.error-msg;
+  }
+}
+
+.button {
+  padding: 0.5rem 1rem;
+  border: 0.0625rem solid variables.$color-blue-hard;
+  border-radius: 0.25rem;
+  @include mixins.text-md-regular;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:hover {
+    background-color: variables.$color-blue-lighter;
+  }
+
+  &_primary {
+    border: none;
+    color: variables.$color-white-light;
+    background-color: variables.$color-green-medium;
+
+    &:hover {
+      background-color: variables.$color-green-light;
+    }
+  }
+}
+
+.fieldset {
+  display: grid;
+  gap: 0.7rem;
+  justify-content: flex-start;
+}
+
+.field {
+  display: grid;
+  gap: 0.2rem;
+}
